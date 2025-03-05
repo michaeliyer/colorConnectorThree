@@ -1,0 +1,61 @@
+body { 
+    font-family: Arial, sans-serif; 
+    text-align: center; 
+    margin: 20px; 
+}
+    
+.row { 
+    margin: 10px; 
+}
+
+.color-box { 
+    display: inline-block; 
+    width: 80px; 
+    height: 30px; 
+    margin: 5px; 
+    border-radius: 5px; 
+}
+
+.btn { 
+    padding: 8px 12px; 
+    margin: 5px; 
+    cursor: pointer; 
+}
+
+.latest-entry, 
+.total-breakdown, 
+.blended-colors {
+     margin-top: 20px; 
+    }
+
+.latest-color-bar { 
+    display: flex; 
+    justify-content: center; 
+    margin-top: 10px; 
+}
+
+.editable { 
+    cursor: pointer; 
+    text-decoration: underline; 
+}
+
+#theColorCode {
+    font-family: "League Gothic", sans-serif; 
+    font-family: "Sancreek", serif;
+}
+
+.purple {
+    background-color: rgb(180, 123, 234);
+}
+
+.blue {
+    background-color: rgb(113, 178, 244);
+}
+
+.green {
+    background-color: rgb(94, 212, 84);
+}
+
+.yellow {
+    background-color: rgb(244, 244, 9);
+}

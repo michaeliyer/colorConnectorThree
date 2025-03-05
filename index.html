@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorConnector2</title>
+    <link href="https://fonts.googleapis.com/css2?family=League+Gothic&family=Freckle+Face&family=Sancreek&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poetsen+One&family=Concert+One&family=Teko:wght@300..700&display=swap&family=Lobster" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+    <h2>Color Connections</h2>
+
+    <!-- Dropdown Inputs -->
+    <div id="rows">
+        <div class="row">Row 1: <select id="row1" onchange="preventDuplicateColors()"></select></div>
+        <div class="row">Row 2: <select id="row2" onchange="preventDuplicateColors()"></select></div>
+        <div class="row">Row 3: <select id="row3" onchange="preventDuplicateColors()"></select></div>
+        <div class="row">Row 4: <select id="row4" onchange="preventDuplicateColors()"></select></div>
+    </div>
+
+    <button class="btn" onclick="submitEntry()">Submit Entry</button>
+    
+<!-- Latest Entry Display -->
+<div class="latest-entry">
+    <h3>Latest Entry</h3>
+    <div id="latestEntryText">No entries yet.</div>
+    <div class="latest-color-bar" id="latestColorBar"></div>
+    <button class="btn" onclick="deleteLatestEntry()">Delete Latest Entry</button>
+    <button class="btn" id="saveEditButton" onclick="saveEditedEntry()" style="display:none;">Save Edit</button>
+</div>
+
+    <!-- Total Breakdown Display -->
+    <div class="total-breakdown">
+        <h3>Total Breakdown</h3>
+        <div id="totals"></div>
+    </div>
+
+    <!-- Blended Colors Display -->
+    <div class="blended-colors">
+        <h3>Blended Colors</h3>
+        <div id="blendedColors"></div>
+    </div>
+
+    <button class="btn" onclick="clearAllData()">Clear All Data</button>
+    <div id="theColorCode">   
+        <h1 class="purple">The</h1>
+        <h1 class="blue">Right</h1>
+        <h1 class="green">Is</h1>
+        <h1 class="yellow">Wrong</h1>
+    </div> 
+    <script src="script.js"></script>
+</body>
+</html> 
