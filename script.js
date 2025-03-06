@@ -237,6 +237,7 @@ function editLatestEntry(row) {
 function displayTotals(totals) {
     let totalDiv = document.getElementById("totals");
     totalDiv.innerHTML = "<h3>Total Breakdown</h3>";
+    totalDiv.style.color = "black";
 
     for (let row in totals) {
         let text = `<strong>${row.toUpperCase()}:</strong> `;
