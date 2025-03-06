@@ -1,3 +1,9 @@
+function capitalizeFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
+
 // Available colors
 const colors = ["Purple", "Blue", "Green", "Yellow"];
 
@@ -77,7 +83,7 @@ function submitEntry(isEdit = false) {
     // Save latest entry to local storage
     localStorage.setItem("latestEntry", JSON.stringify(latestEntry));
 
-    let entries = JSON.parse(localStorage.getItem("colorConnectorTwo")) || [];
+    let entries = JSON.parse(localStorage.getItem("colorConnectorThree")) || [];
 
     if (isEdit) {
         // Replace the last entry with the new edit
@@ -86,7 +92,7 @@ function submitEntry(isEdit = false) {
         entries.push(latestEntry);
     }
 
-    localStorage.setItem("colorConnectorTwo", JSON.stringify(entries));
+    localStorage.setItem("colorConnectorThree", JSON.stringify(entries));
 
     resetInputs(); // Clears dropdowns
     loadData(); // Updates UI
@@ -100,31 +106,63 @@ function resetInputs() {
 // Load stored data and update UI
 function loadData() {
     let latestEntry = JSON.parse(localStorage.getItem("latestEntry"));
-    let entries = JSON.parse(localStorage.getItem("colorConnectorTwo")) || [];
+    let entries = JSON.parse(localStorage.getItem("colorConnectorThree")) || [];
     let totals = { row1: {}, row2: {}, row3: {}, row4: {} };
 
     let latestDiv = document.getElementById("latestEntryText");
     let latestColorBar = document.getElementById("latestColorBar");
     latestColorBar.innerHTML = "";
-    
+
+
+
     if (latestEntry) {
         latestDiv.innerHTML = "";
         for (let row in latestEntry) {
-            latestDiv.innerHTML += `<span class="editable" onclick="editLatestEntry('${row}')">${row.toUpperCase()}: ${latestEntry[row]}</span> | `;
+            let capitalizedColor = capitalizeFirstLetter(latestEntry[row]); // Capitalize color name
+            latestDiv.innerHTML += `<span class="editable" onclick="editLatestEntry('${row}')">${row.toUpperCase()}: ${capitalizedColor}</span> | `;
+            
             let colorBox = document.createElement("div");
             colorBox.className = "color-box";
-
+    
             // Convert color name to RGB using `colorMap`
             let colorRGB = colorMap[latestEntry[row].toLowerCase()]
                 ? `rgb(${colorMap[latestEntry[row].toLowerCase()].join(",")})`
                 : latestEntry[row];
-
+    
             colorBox.style.background = colorRGB;
             latestColorBar.appendChild(colorBox);
         }
     } else {
         latestDiv.textContent = "No entries yet.";
     }
+
+
+
+
+
+
+
+    
+    // if (latestEntry) {
+    //     latestDiv.innerHTML = "";
+    //     for (let row in latestEntry) {
+    //         latestDiv.innerHTML += `<span class="editable" onclick="editLatestEntry('${row}')">${row.toUpperCase()}: ${latestEntry[row]}</span> | `;
+    //         let colorBox = document.createElement("div");
+    //         colorBox.className = "color-box";
+
+    //         // Convert color name to RGB using `colorMap`
+    //         let colorKey = latestEntry[row].toLowerCase();
+
+    //         let colorRGB = colorMap[latestEntry[row].toLowerCase()]
+    //             ? `rgb(${colorMap[latestEntry[row].toLowerCase()].join(",")})`
+    //             : latestEntry[row];
+
+    //         colorBox.style.background = colorRGB;
+    //         latestColorBar.appendChild(colorBox);
+    //     }
+    // } else {
+    //     latestDiv.textContent = "No entries yet.";
+    // }
 
     // Count colors per row
     entries.forEach(entry => {
@@ -154,6 +192,8 @@ function editLatestEntry(row) {
 }
 
 // Display total breakdown
+
+
 function displayTotals(totals) {
     let totalDiv = document.getElementById("totals");
     totalDiv.innerHTML = "";
@@ -161,11 +201,30 @@ function displayTotals(totals) {
     for (let row in totals) {
         let text = `${row.toUpperCase()}: `;
         for (let color in totals[row]) {
-            text += `${color} (${totals[row][color]}), `;
+            let capitalizedColor = capitalizeFirstLetter(color);
+            text += `${capitalizedColor} (${totals[row][color]}), `;
         }
         totalDiv.innerHTML += `<p>${text.slice(0, -2)}</p>`;
     }
 }
+
+
+
+
+
+
+// function displayTotals(totals) {
+//     let totalDiv = document.getElementById("totals");
+//     totalDiv.innerHTML = "";
+
+//     for (let row in totals) {
+//         let text = `${row.toUpperCase()}: `;
+//         for (let color in totals[row]) {
+//             text += `${color} (${totals[row][color]}), `;
+//         }
+//         totalDiv.innerHTML += `<p>${text.slice(0, -2)}</p>`;
+//     }
+// }
 
 // Calculate blended color for a row
 function calculateBlendedColor(colorCounts) {
@@ -210,9 +269,9 @@ function deleteLatestEntry() {
     if (confirm("Are you sure you want to delete the latest entry?") &&
         confirm("This action cannot be undone. Proceed?")) {
         localStorage.removeItem("latestEntry");
-        let entries = JSON.parse(localStorage.getItem("colorConnectorTwo")) || [];
+        let entries = JSON.parse(localStorage.getItem("colorConnectorThree")) || [];
         entries.pop(); // Remove last entry
-        localStorage.setItem("colorConnectorTwo", JSON.stringify(entries));
+        localStorage.setItem("colorConnectorThree", JSON.stringify(entries));
         loadData();
     }
 }

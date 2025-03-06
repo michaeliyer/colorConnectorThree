@@ -1,11 +1,31 @@
 body { 
-    font-family: Arial, sans-serif; 
+    font-family: "Suranna", serif;
+    font-weight: 700;
     text-align: center; 
     margin: 20px; 
+    background-color: rgb(77, 77, 77);
+    color: rgb(203, 203, 203);
+}
+
+.textSize,
+h2 {
+    font-family: "Artifika", serif;
+    font-size: 1.5rem;
+    color: rgb(240, 240, 240);
 }
     
 .row { 
     margin: 10px; 
+    font-family: "Bree Serif", serif;
+}
+
+#row1,
+#row2,
+#row3,
+#row4 { 
+    font-family: Sancreek, sans-serif; 
+    font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .color-box { 
@@ -20,6 +40,13 @@ body {
     padding: 8px 12px; 
     margin: 5px; 
     cursor: pointer; 
+    font-family: "Galindo", sans-serif;
+    font-size: 1.25rem;
+}
+
+.total-breakdown {
+    font-family: "Nerko One", cursive;
+    font-size: 2rem;
 }
 
 .latest-entry, 
@@ -44,7 +71,7 @@ body {
     font-family: "Sancreek", serif;
 }
 
-.purple {
+/* .purple {
     background-color: rgb(180, 123, 234);
 }
 
@@ -58,4 +85,4 @@ body {
 
 .yellow {
     background-color: rgb(244, 244, 9);
-}
+} */
