@@ -3,14 +3,14 @@ body {
     font-weight: 700;
     text-align: center; 
     margin: 20px; 
-    background-color: rgb(77, 77, 77);
+    background-color: rgb(53, 52, 52);
     color: rgb(203, 203, 203);
 }
 
 .textSize,
 h2 {
-    font-family: "Artifika", serif;
-    font-size: 1.5rem;
+    font-family: "Russo One", sans-serif;
+    font-size: 2rem;
     color: rgb(240, 240, 240);
 }
     
@@ -34,6 +34,11 @@ h2 {
     height: 30px; 
     margin: 5px; 
     border-radius: 5px; 
+}
+
+#latestEntryText {
+    font-family: "Russo One", sans-serif;
+    font-size: 1.25rem;
 }
 
 .btn { 

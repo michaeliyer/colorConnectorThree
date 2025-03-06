@@ -15,16 +15,6 @@ const colorMap = {
     "yellow": [244, 244, 9]
 };
 
-// Available colors
-// const colors = ["Purple", "Blue", "Green", "Yellow"];
-
-// const colorMap = {
-//     "purple": [128, 0, 128],
-//     "blue": [0, 0, 255],
-//     "green": [0, 128, 0],
-//     "yellow": [255, 255, 0]
-// };
-
 // Load dropdowns and data on page load
 document.addEventListener("DOMContentLoaded", function () {
     populateDropdowns();
@@ -137,33 +127,6 @@ function loadData() {
     }
 
 
-
-
-
-
-
-    
-    // if (latestEntry) {
-    //     latestDiv.innerHTML = "";
-    //     for (let row in latestEntry) {
-    //         latestDiv.innerHTML += `<span class="editable" onclick="editLatestEntry('${row}')">${row.toUpperCase()}: ${latestEntry[row]}</span> | `;
-    //         let colorBox = document.createElement("div");
-    //         colorBox.className = "color-box";
-
-    //         // Convert color name to RGB using `colorMap`
-    //         let colorKey = latestEntry[row].toLowerCase();
-
-    //         let colorRGB = colorMap[latestEntry[row].toLowerCase()]
-    //             ? `rgb(${colorMap[latestEntry[row].toLowerCase()].join(",")})`
-    //             : latestEntry[row];
-
-    //         colorBox.style.background = colorRGB;
-    //         latestColorBar.appendChild(colorBox);
-    //     }
-    // } else {
-    //     latestDiv.textContent = "No entries yet.";
-    // }
-
     // Count colors per row
     entries.forEach(entry => {
         for (let row in entry) {
@@ -208,23 +171,6 @@ function displayTotals(totals) {
     }
 }
 
-
-
-
-
-
-// function displayTotals(totals) {
-//     let totalDiv = document.getElementById("totals");
-//     totalDiv.innerHTML = "";
-
-//     for (let row in totals) {
-//         let text = `${row.toUpperCase()}: `;
-//         for (let color in totals[row]) {
-//             text += `${color} (${totals[row][color]}), `;
-//         }
-//         totalDiv.innerHTML += `<p>${text.slice(0, -2)}</p>`;
-//     }
-// }
 
 // Calculate blended color for a row
 function calculateBlendedColor(colorCounts) {
