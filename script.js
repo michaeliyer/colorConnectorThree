@@ -193,6 +193,8 @@ function calculateBlendedColor(colorCounts) {
     return `rgb(${avgRGB.join(",")})`;
 }
 
+
+
 // Display blended colors per row
 function displayBlendedColors(totals) {
     let blendedDiv = document.getElementById("blendedColors");
@@ -209,6 +211,7 @@ function displayBlendedColors(totals) {
         blendedDiv.appendChild(colorBox);
     }
 }
+
 
 // Delete Latest Entry
 function deleteLatestEntry() {
