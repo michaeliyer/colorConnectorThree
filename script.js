@@ -237,7 +237,7 @@ function editLatestEntry(row) {
 function displayTotals(totals) {
     let totalDiv = document.getElementById("totals");
     totalDiv.innerHTML = "<h3>Total Breakdown</h3>";
-    totalDiv.style.color = "black";
+    totalDiv.style.color = "white";
 
     for (let row in totals) {
         let text = `<strong>${row.toUpperCase()}:</strong> `;
@@ -251,10 +251,10 @@ function displayTotals(totals) {
 
             text += `<span style="color: ${colorRGB}; font-weight: bold;">
                         ${capitalizedColor} (${totals[row][color]})
-                     </span>, `;
+                     </span>🌈 `;
         }
-
-        totalDiv.innerHTML += `<p>${text.slice(0, -2)}</p>`; // Remove last comma
+        totalDiv.innerHTML += `<p>${text}</p>`;
+        // totalDiv.innerHTML += `<p>${text.slice(0, -2)}</p>`; // Remove last comma
     }
 }
 

@@ -4,14 +4,15 @@ body {
     text-align: center; 
     margin: 20px; 
     background-color: rgb(53, 52, 52);
-    color: rgb(203, 203, 203);
+    color: rgb(255, 255, 255);
 }
 
 .textSize,
 h2 {
     font-family: "Russo One", sans-serif;
     font-size: 2rem;
-    color: rgb(3, 3, 3);
+    color: rgb(255, 255, 255);
+    /* color: rgb(3, 3, 3); */
 }
     
 .row { 
@@ -52,6 +53,7 @@ h2 {
 .total-breakdown {
     font-family: "Nerko One", cursive;
     font-size: 2rem;
+    color: white;
 }
 
 .latest-entry, 
